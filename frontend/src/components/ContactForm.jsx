@@ -45,7 +45,6 @@ function ContactForm() {
       setProgress(100); // Set progress to 100% when done
 
       if (response.ok) {
-        alert(result.message);
         setFormData({ name: "", email: "", message: "" });
         setLoading(false); // Hide loader after successful submission
         setShowModal(true); // Show modal after success
