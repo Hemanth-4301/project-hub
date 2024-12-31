@@ -33,7 +33,7 @@ app.post("/send-verification", async (req, res) => {
   const verificationToken = crypto.randomBytes(16).toString("hex"); // Generate unique token
   verificationTokens[email] = { token: verificationToken, message, name }; // Store token and message
 
-  const verificationLink = `http://localhost:5000/verify-email?email=${email}&token=${verificationToken}`;
+  const verificationLink = `https://project-hub-68aa.onrender.com/verify-email?email=${email}&token=${verificationToken}`;
 
   try {
     await transporter.sendMail({

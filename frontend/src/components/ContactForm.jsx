@@ -30,11 +30,14 @@ function ContactForm() {
         setProgress((prev) => Math.min(prev + 10, 90)); // Increment progress
       }, 300);
 
-      const response = await fetch("http://localhost:5000/send-verification", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://project-hub-68aa.onrender.com/send-verification",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
 
